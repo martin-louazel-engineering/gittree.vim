@@ -20,11 +20,10 @@
 " OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 " THE SOFTWARE.
 
-let s:begin = '^[^0-9]*\s\+'
 let s:format = "%h%d %s"
 
 function! gittree#sha(...)
-	return matchstr(get(a:000, 0, getline('.')), s:begin.'\zs[a-f0-9]\+')
+	return matchstr(getline('.'), '[a-f0-9]\{7,\}')
 endfunction
 
 function! s:open()
