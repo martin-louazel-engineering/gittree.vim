@@ -20,6 +20,10 @@
 " OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 " THE SOFTWARE.
 
+function! s:warn(message)
+  echohl WarningMsg | echom a:message | echohl None
+endfunction
+
 let s:format = "%h%d %s"
 
 function! gittree#sha(...)
@@ -31,7 +35,7 @@ function! s:open()
 	if !empty(sha)
 		execute "G show ".sha
 	else
-		echo "Commit SHA not found"
+		call s:warn("Commit SHA not found")
 	endif
 endfunction
 
