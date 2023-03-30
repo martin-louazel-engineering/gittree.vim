@@ -55,6 +55,7 @@ function! s:setupBuffer(args)
 		execute "buffer" bufnr(l:bufName)
 	else
 		enew
+		setlocal iskeyword+=-
 		execute "file ".l:bufName
 		call s:mappings()
 	endif
