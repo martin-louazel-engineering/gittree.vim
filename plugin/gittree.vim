@@ -50,7 +50,7 @@ endfunction
 function! s:setupBuffer(args)
 	" Only create a new buffer if not already on Gittree buffer, otherwise go
 	" to it
-	let l:bufName="Gittree"
+	let l:bufName="GT"
 	if strlen(a:args)
 		let l:bufName=l:bufName." ".escape(a:args, " ")
 	endif
