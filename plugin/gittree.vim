@@ -50,7 +50,10 @@ endfunction
 function! s:setupBuffer(args)
 	" Only create a new buffer if not already on Gittree buffer, otherwise go
 	" to it
-	let l:bufName=trim("Gittree\ ".escape(a:args, " "))
+	let l:bufName="Gittree"
+	if strlen(a:args)
+		let l:bufName=l:bufName." ".escape(a:args, " ")
+	endif
 	if buflisted(l:bufName) > 0
 		execute "buffer" bufnr(l:bufName)
 	else
