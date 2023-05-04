@@ -40,11 +40,11 @@ function! s:git_command(cmd)
 endfunction
 
 function! s:mappings()
-	nnoremap <buffer> <CR>	:call <sid>git_command("show")<CR>
-	nnoremap <buffer> o		:call <sid>git_command("show")<CR>
-	nnoremap <buffer> <leader>gc :call <sid>git_command("checkout")<CR>
-	nnoremap <buffer> <leader>gp :call <sid>git_command("cherry-pick")<CR>
-	nnoremap <buffer> <leader>gr :call <sid>git_command("revert")<CR>
+	nnoremap <silent> <buffer> <CR>			:call <sid>git_command("show")<CR>
+	nnoremap <silent> <buffer> o			:call <sid>git_command("show")<CR>
+	nnoremap <silent> <buffer> <leader>gc	:call <sid>git_command("checkout")<CR>
+	nnoremap <silent> <buffer> <leader>gp	:call <sid>git_command("cherry-pick")<CR>
+	nnoremap <silent> <buffer> <leader>gr	:call <sid>git_command("revert")<CR>
 endfunction
 
 function! s:setupBuffer(args)
