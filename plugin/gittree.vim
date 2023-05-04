@@ -30,21 +30,21 @@ function! gittree#sha(...)
 	return matchstr(getline('.'), '[a-f0-9]\{7,\}')
 endfunction
 
-function! s:open()
+function! s:git_command(cmd)
 	let sha = gittree#sha()
 	if !empty(sha)
-		execute "G show ".sha
+		execute "G ".a:cmd." ".sha
 	else
 		call s:warn("Commit SHA not found")
 	endif
 endfunction
 
 function! s:mappings()
-	nnoremap <buffer> <CR>	:call <sid>open()<CR>
-	nnoremap <buffer> o		:call <sid>open()<CR>
-	nnoremap <buffer> <leader>gc :Git checkout <cword><CR>
-	nnoremap <buffer> <leader>gp :Git cherry-pick <cword><CR>
-	nnoremap <buffer> <leader>gr :Git revert <cword><CR>
+	nnoremap <buffer> <CR>	:call <sid>git_command("show")<CR>
+	nnoremap <buffer> o		:call <sid>git_command("show")<CR>
+	nnoremap <buffer> <leader>gc :call <sid>git_command("checkout")<CR>
+	nnoremap <buffer> <leader>gp :call <sid>git_command("cherry-pick")<CR>
+	nnoremap <buffer> <leader>gr :call <sid>git_command("revert")<CR>
 endfunction
 
 function! s:setupBuffer(args)
