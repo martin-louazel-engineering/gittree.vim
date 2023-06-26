@@ -33,9 +33,9 @@ Usage
 ### Mappings
 
 - `o` or `<cr>` on a commit to display the content of it in a vim split
-- `<leader>gc` on a commit hash to check it out
-- `<leader>gp` on a commit hash to cherry-pick it
-- `<leader>gr` on a commit hash to revert it
+- `<leader>gc` on a line to check its commit out
+- `<leader>gp` on a line to cherry-pick its commit
+- `<leader>gr` on a line to revert its commit
 
 Customization
 -------------
