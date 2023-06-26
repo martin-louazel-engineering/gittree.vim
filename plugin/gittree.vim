@@ -45,6 +45,7 @@ function! s:mappings()
 	nnoremap <silent> <buffer> <leader>gc	:call <sid>git_command("checkout")<CR>
 	nnoremap <silent> <buffer> <leader>gp	:call <sid>git_command("cherry-pick")<CR>
 	nnoremap <silent> <buffer> <leader>gr	:call <sid>git_command("revert")<CR>
+	nnoremap <silent> <buffer> <leader>gs	:Git switch <cword><CR>
 endfunction
 
 function! s:setupBuffer(args)

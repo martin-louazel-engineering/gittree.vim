@@ -36,6 +36,7 @@ Usage
 - `<leader>gc` on a line to check its commit out
 - `<leader>gp` on a line to cherry-pick its commit
 - `<leader>gr` on a line to revert its commit
+- `<leader>gs` to run git switch on whatever is under the cursor (ie branch/commit/tag)
 
 Customization
 -------------
