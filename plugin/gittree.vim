@@ -60,6 +60,7 @@ function! s:setupBuffer(args)
 	else
 		enew
 		setlocal iskeyword+=-
+		setlocal iskeyword+=/
 		setlocal nowrap
 		execute "file ".l:bufName
 		call s:mappings()
