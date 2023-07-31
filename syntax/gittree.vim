@@ -6,7 +6,7 @@ let b:current_syntax = "gittree"
 syn match gittreeSkip		/^...$/
 syn match gittreeLine		/^[_\*|\/\\ ]\+\(\<\x\{4,40\}\>.*\)\?$/
 syn match gittreeHead		/^[_\*|\/\\ ]\+\(\<\x\{4,40\}\>\( ([^)]\+)\)\? \)\?/ contained containedin=gittreeLine
-syn match gittreeHeadPtr	/HEAD ->/ contained containedin=gittreeRefs
+syn match gittreeHeadPtr	/HEAD\( ->\)\?/ contained containedin=gittreeRefs
 syn match gittreeTag		/tag: [^,)]*/ contained containedin=gittreeRefs
 syn match gittreeRemote		/[^,()]*\/[^,)]*/ contained containedin=gittreeRefs
 syn match gittreeRefs		/([^)]*)/ contained containedin=gittreeHead
