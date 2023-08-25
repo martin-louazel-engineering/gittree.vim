@@ -63,6 +63,7 @@ function! s:setupBuffer(args)
 		setlocal iskeyword+=-
 		setlocal iskeyword+=/
 		setlocal nowrap
+		setlocal noswapfile
 		execute "file ".l:bufName
 		call s:mappings()
 	endif
