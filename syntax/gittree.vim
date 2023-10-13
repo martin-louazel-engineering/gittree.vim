@@ -13,7 +13,7 @@ syn match gittreeRefs		/([^)]*)/ contained containedin=gittreeHead
 syn match gittreeHashAbbrev /\x\{7,\}/ contained containedin=gittreeHead nextgroup=gittreeRefs
 syn match gittreeGraph		/^[_\*|\/\\ ]\+/ contained containedin=gittreeHead,gittreeCommit nextgroup=gittreeHashAbbrev skipwhite
 hi def link gittreeHashAbbrev	Constant
-hi def link gittreeGraph		CursorLineNr
+hi def link gittreeGraph		Normal
 hi def link gittreeRefs			Function
 hi def link gittreeHeadPtr		Type
 hi def link gittreeRemote		Keyword
