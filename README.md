@@ -36,7 +36,7 @@ Usage
 - `<leader>gc` on a line to check its commit out
 - `<leader>gp` on a line to cherry-pick its commit
 - `<leader>gr` on a line to revert its commit
-- `<leader>gf` on a line to create a patch file with its commit
+- `[count]<leader>gf` on a line to create [count] patch file(s) starting with its commit
 - `<leader>gs` to run git switch on whatever is under the cursor (ie branch/commit/tag)
 - `<leader>gm` to run git merge on whatever is under the cursor
 
