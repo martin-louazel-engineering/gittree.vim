@@ -55,7 +55,7 @@ function! s:setupBuffer(args)
 	" to it
 	let l:bufName="GT"
 	if strlen(a:args)
-		let l:bufName=l:bufName." ".escape(a:args, " ")
+		let l:bufName=l:bufName." ".escape(a:args, " %")
 	endif
 	if buflisted(l:bufName) > 0
 		execute "buffer" bufnr(l:bufName)
@@ -72,8 +72,8 @@ endfunction
 
 
 function! s:gittree(args)
-	let l:logArgs = expand(a:args)
-	let l:logCmd='git log --color=never --format="'.escape(s:format,"%").'" --graph '.l:logArgs
+	let l:logArgs = expandcmd(a:args)
+	let l:logCmd='git log --color=never --format="'.escape(s:format,"%").'" --graph '.escape(l:logArgs,"%")
 
 	call s:setupBuffer(l:logArgs)
 
