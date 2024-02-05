@@ -80,6 +80,7 @@ function! s:gittree(args)
 	setlocal modifiable
 	%delete _
 	silent execute 'read!'.l:logCmd
+	silent execute '%s/\s\+$//e'
 	normal! gg"_dd
 	setlocal nomodifiable
 	setlocal buftype=nofile
