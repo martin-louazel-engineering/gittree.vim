@@ -88,4 +88,4 @@ function! s:gittree(args)
 	setf gittree
 endfunction
 
-command! -nargs=* -complete=customlist,fugitive#Complete GT call s:gittree(<q-args>)
+command! -nargs=* -complete=customlist,fugitive#CompleteObject GT call s:gittree(<q-args>)
