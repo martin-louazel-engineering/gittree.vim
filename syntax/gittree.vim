@@ -19,4 +19,4 @@ hi def link gtRefs			Character
 hi def link gtHeadPtr		Type
 hi def link gtBranch		Function
 hi def link gtRemote		Keyword
-hi def link gtTag			String
+hi def link gtTag			WarningMsg
