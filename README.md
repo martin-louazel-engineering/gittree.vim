@@ -43,4 +43,9 @@ Usage
 Customization
 -------------
 
-No customization is available for the moment, I will maybe extend the plugin later to allow for a somewhat arbitrary git log format...
+You may use the following variable in your `.vimrc` to customize the git log format to some extent (default value:`"%h%d %s"`)
+```vim
+let g:gittree_format = "%h%d %s - %an (%cd)"
+```
+However, USE THIS AT YOUR OWN RISK: The possibility for format-agnostic syntax highlighting is very limited for such application, so the current syntax heavily relies on relative position of elements. Changing this value may result in the syntax highlight breaking.
+Also note that the plugin REQUIRES the commit sha or abbreviated sha to be included on the line for most of it to work.

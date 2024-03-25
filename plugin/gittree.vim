@@ -24,7 +24,9 @@ function! s:warn(message)
   echohl WarningMsg | echom a:message | echohl None
 endfunction
 
-let s:format = "%h%d %s"
+if !exists("g:gittree_format")
+	let g:gittree_format = "%h%d %s"
+endif
 
 function! gittree#sha(...)
 	return matchstr(getline('.'), '[a-f0-9]\{7,\}')
@@ -73,7 +75,7 @@ endfunction
 
 function! s:gittree(args)
 	let l:logArgs = expandcmd(a:args)
-	let l:logCmd='git log --color=never --format="'.escape(s:format,"%").'" --graph '.escape(l:logArgs,"%")
+	let l:logCmd='git log --color=never --format="'.escape(g:gittree_format,"%").'" --graph '.escape(l:logArgs,"%")
 
 	call s:setupBuffer(l:logArgs)
 
