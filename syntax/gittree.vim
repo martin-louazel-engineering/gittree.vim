@@ -20,13 +20,13 @@ syn match gtHeadPtr		/HEAD\( ->\)\?/ contained containedin=gtRefs
 
 hi def link gtSkip			Comment
 hi def link gtGraph			Normal
-hi def link gtDiffLineRef	Label
+hi gtDiffLineRef			guifg=#75B5AA
 hi def link gtDiffPlus		Green
 hi def link gtDiffMinus		Red
-hi gtDiffMeta term=bold cterm=bold ctermfg=White gui=bold guifg=White
-hi def link gtHashAbbrev	Constant
-hi def link gtRefs			Character
-hi def link gtHeadPtr		Type
-hi def link gtBranch		Function
-hi def link gtRemote		Keyword
-hi def link gtTag			WarningMsg
+hi gtDiffMeta		term=bold cterm=bold ctermfg=White gui=bold guifg=White
+hi gtHashAbbrev		guifg=#F4BF75
+hi gtRefs			guifg=#F4BF75
+hi gtHeadPtr		guifg=#689F97
+hi gtBranch			guifg=#90A959
+hi gtRemote			guifg=#AC4242
+hi gtTag			term=bold guifg=#F1BD74
