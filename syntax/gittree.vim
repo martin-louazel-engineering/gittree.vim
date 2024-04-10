@@ -15,7 +15,7 @@ syn match gtHashAbbrev	/\x\{7,\}/ contained nextgroup=gtRefs skipwhite
 syn match gtRefs		/([^)]*)/ contained nextgroup=gtMessage skipwhite
 syn match gtBranch		/[^,()]*/ contained containedin=gtRefs
 syn match gtRemote		/[^,()]*\/[^,)]*/ contained containedin=gtRefs
-syn match gtTag			/tag: [^,)]*/ contained containedin=gtRefs
+syn match gtTag			/\s\?tag: [^,)]*/ contained containedin=gtRefs
 syn match gtHeadPtr		/HEAD\( ->\)\?/ contained containedin=gtRefs
 
 hi def link gtSkip			Comment
