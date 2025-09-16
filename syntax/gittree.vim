@@ -21,8 +21,8 @@ syn match gtHeadPtr		/HEAD\( ->\)\?/ contained containedin=gtRefs
 hi def link gtSkip			Comment
 hi def link gtGraph			Normal
 hi gtDiffLineRef			guifg=#75B5AA
-hi def link gtDiffPlus		Green
-hi def link gtDiffMinus		Red
+hi def link gtDiffPlus		diffAdded
+hi def link gtDiffMinus		diffRemoved
 hi gtDiffMeta		term=bold cterm=bold ctermfg=White gui=bold guifg=White
 hi gtHashAbbrev		guifg=#F4BF75
 hi gtRefs			guifg=#F4BF75

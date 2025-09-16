@@ -75,13 +75,19 @@ endfunction
 
 function! s:gittree(args)
 	let l:logArgs = expandcmd(a:args)
-	let l:logCmd='git log --color=never --format="'.escape(g:gittree_format,"%").'" --graph '.escape(l:logArgs,"%")
+	let l:logCmd='git log --color=never --format="'.g:gittree_format.'" --graph '.escape(l:logArgs,"%")
+
+	let l:cmdOutput = system(l:logCmd)
+	if v:shell_error
+		call s:warn(trim(l:cmdOutput))
+		return
+	endif
 
 	call s:setupBuffer(l:logArgs)
 
 	setlocal modifiable
 	%delete _
-	silent execute 'read!'.l:logCmd
+	silent execute 'put =l:cmdOutput'
 	silent execute '%s/\s\+$//e'
 	normal! gg"_dd
 	setlocal nomodifiable
